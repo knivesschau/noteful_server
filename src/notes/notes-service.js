@@ -21,12 +21,12 @@ const NotesService = {
             .first();
     },
     deleteNote(knex, id) {
-        return knex('folders')
+        return knex('notes')
             .where({id})
             .delete();
     },
-    updateNote(knex, newNoteFields) {
-        return knex('folders')
+    updateNote(knex, id, newNoteFields) {
+        return knex('notes')
             .where({id})
             .update(newNoteFields)
     }
